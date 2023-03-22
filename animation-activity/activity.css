@@ -3,6 +3,10 @@
   animation-name: top;
   animation-duration: 1s;
   animation-fill-mode: forwards;
+  transform: rotate(45deg);
+  transform: matrix (1,2);
+  transform-origin: top left;
+  perspective-origin: bottom right;
 }
 
 .hamburger:hover > div:nth-child(2){
@@ -16,6 +20,10 @@
   animation-name: bottom;
   animation-duration: 1s;
   animation-fill-mode: forwards;
+  transform: matrix (1,2);
+  transform: rotate(-45deg);
+  transform-origin: bottom left;
+  perspective-origin: top right;
 }
 
 nav {
@@ -28,16 +36,17 @@ nav {
 }
 
 @keyframes top {
-  from {};
-  to {};
+  from {bottom: 50px; left:50px;}
+  to {top: 50px; right: 50px;}
 }
 
+
 @keyframes middle {
-  from {}
-  to {}
+  0%   {background-color: rebeccapurple;}
+  100% {background-color: mediumvioletred;}
 }
 
 @keyframes bottom {
-  from {}
-  to {}
+  from {top:50px; left:50px;}
+  to {bottom:50px; right: 50px;}
 }
